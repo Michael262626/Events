@@ -1,36 +1,54 @@
-import React from 'react';
+"use client";
+
+import React from "react";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import logo from "../../../public/assets/Brand_logo_2[1].png";
 
 const Navbar = () => {
+  const pathname = usePathname();
+
+  const isActive = (path: string) => pathname === path;
+
   return (
     <div className="bg-black text-white px-12 py-8 flex items-center justify-between sticky top-0 z-50">
       {/* Logo Section */}
       <div className="flex items-center space-x-2">
-        <div className="bg-pink-600 w-6 h-6 rounded"></div>
-        <span className="text-xl font-bold">eventiva</span>
-        <span className="text-pink-600 text-2xl">.</span>
+        <Image src={logo} width={150} height={20} alt="Logo" />
       </div>
 
       {/* Navigation Links */}
       <div className="flex items-center space-x-6 text-sm font-medium">
-        <div className="relative group">
-          <a href="#" className="text-pink-600">
-            HOME
-          </a>
-          <span className="ml-1 group-hover:rotate-180 transform inline-block">&#x25BC;</span>
-        </div>
-        <a href="#" className="text-white">
+        <a
+          href="/home"
+          className={`${
+            isActive("/home") ? "text-pink-600" : "text-white"
+          } hover:text-pink-600 transition-colors`}
+        >
+          HOME
+        </a>
+        <a
+          href="/about"
+          className={`${
+            isActive("/about") ? "text-pink-600" : "text-white"
+          } hover:text-pink-600 transition-colors`}
+        >
           ABOUT US
         </a>
-        <a href="#" className="text-white">
+        <a
+          href="/venue"
+          className={`${
+            isActive("/venue") ? "text-pink-600" : "text-white"
+          } hover:text-pink-600 transition-colors`}
+        >
           VENUE
         </a>
-        <div className="relative group">
-          <a href="#" className="text-white">
-            BLOG
-          </a>
-          <span className="ml-1 group-hover:rotate-180 transform inline-block">&#x25BC;</span>
-        </div>
-        <a href="#" className="text-white">
+        <a
+          href="/contact"
+          className={`${
+            isActive("/contact") ? "text-pink-600" : "text-white"
+          } hover:text-pink-600 transition-colors`}
+        >
           CONTACT US
         </a>
       </div>

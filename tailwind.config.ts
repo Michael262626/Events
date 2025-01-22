@@ -12,7 +12,16 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-    },
+      animation: {
+        'move-text': 'moveText 10s linear infinite',
+      },
+      keyframes: {
+        moveText: {
+          '0%': { transform: 'translateX(100%)' },  
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      }  
+    }      
   },
   plugins: [],
 } satisfies Config;

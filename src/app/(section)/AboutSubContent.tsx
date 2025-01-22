@@ -1,0 +1,78 @@
+import { FaCalendarAlt, FaMicrophoneAlt } from "react-icons/fa";
+import { IoIosStarHalf, IoLogoGameControllerB } from "react-icons/io";
+
+const AboutSubContent = ()=>{
+    return(
+    <div className="bg-black text-white py-16">
+      <div className="container mx-auto p-12">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row justify-between items-start mb-12">
+            <div className="md:w-1/2 text-left">
+            <div className="flex items-center gap-3">
+            <div className="w-6 h-1 bg-pink-500"></div>
+                <h2 className="text-2xl font-semibold mb-2">Benefits</h2>
+            </div>
+                    <h3 className="text-4xl font-extrabold text-white mb-4">
+                        What <br /> <span className="text-purple-500">Will You Get</span>
+                    </h3>
+            </div>
+                <div className="md:w-1/2 text-right">
+                    <p className="text-gray-400 max-w-xl">
+                        Immerse in mesmerizing performances, vibrant <br /> soundscapes, and interactive art at our music <br />
+                         extravaganza. Experience a festival atmosphere like <br /> no other.
+                    </p>
+                </div>
+            </div>
+
+        {/* Cards Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Card 1 */}
+          <div className="bg-black border border-gray-700 p-6 rounded-xl text-center">
+          <div className="flex flex-col items-center text-pink-500 text-4xl mb-4">
+            <FaMicrophoneAlt />
+            </div>
+                <h4 className="text-xl font-bold text-white mb-2">
+                    Immersive Performances
+                </h4>
+                    <p className="text-gray-400">
+                        Immerse yourself in captivating live performances that ignite the stage.
+                    </p>
+            </div>
+
+            <div className="bg-black border border-gray-700 p-6 rounded-xl text-center">
+                <div className="flex flex-col items-center text-pink-500 text-4xl mb-4">
+                    <FaCalendarAlt />
+                </div>
+                <h4 className="text-xl font-bold text-white mb-2">Interactive Schedule</h4>
+            <p className="text-gray-400">
+              Easily plan your day with an interactive event schedule.
+            </p>
+          </div>
+
+          {/* Card 3 */}
+          <div className="bg-black border border-gray-700 p-6 rounded-xl text-center">
+            <div className="flex flex-col items-center text-pink-500 text-4xl mb-4">
+                <IoIosStarHalf />
+            </div>
+            <h4 className="text-xl font-bold text-white mb-2">Diverse Musical Lineup</h4>
+            <p className="text-gray-400">
+              Experience a diverse array of musical of talented artists.
+            </p>
+          </div>
+
+          {/* Card 4 */}
+          <div className="bg-black border border-gray-700 p-6 rounded-xl text-center">
+            <div className="flex flex-col items-center text-pink-500 text-4xl mb-4">
+                <IoLogoGameControllerB />
+            </div>
+                <h4 className="text-xl font-bold text-white mb-2">Engaging Activities</h4>
+                <p className="text-gray-400">
+                    Beyond music, explore engaging and interactive activities.
+                </p>    
+          </div>
+        </div>
+      </div>
+    </div>
+    )
+}
+export default AboutSubContent;

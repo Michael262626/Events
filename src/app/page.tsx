@@ -1,10 +1,15 @@
-import Image from "next/image";
-import HomePage from "./(pages)/home/page";
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  return (
-      <>
-      <HomePage/>
-      </>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    // Redirect to /home URL
+    router.push("/");
+  }, [router]);
+
+  return null;
 }
