@@ -8,7 +8,7 @@ export default function Home() {
 
   useEffect(() => {
     // Redirect to /home URL
-    router.push("/");
+    router.push("/home");
   }, [router]);
 
   return null;

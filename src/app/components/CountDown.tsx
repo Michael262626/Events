@@ -45,20 +45,22 @@ const Countdown = () => {
 
   if (!mounted) return null; // Prevent rendering until after mounting
 
-  return (
-    <div className="flex justify-center gap-14 text-white">
-      {Object.entries(timeLeft).map(([key, value]) => (
-        <div key={key} className="flex items-center text-center gap-2">
-          <p
-            className="text-6xl font-bold text-transparent bg-clip-text 
-              bg-gradient-to-r from-pink-500 to-purple-500 animate-pulse"
-          >
-            {String(value).padStart(2, "0")}
-          </p>
-          <p className="text-lg font-medium capitalize">{key}</p>
-        </div>
-      ))}
-    </div>
+  return (  
+    <div className="flex flex-col sm:flex-row justify-center gap-14 text-white">  
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">  
+        {Object.entries(timeLeft).map(([key, value]) => (  
+          <div key={key} className="flex flex-col sm:flex-row items-center text-center sm:text-left gap-2">  
+            <p  
+              className="text-4xl sm:text-6xl font-bold text-transparent bg-clip-text  
+                bg-gradient-to-r from-pink-500 to-purple-500 animate-pulse"  
+            >  
+              {String(value).padStart(2, "0")}  
+            </p>  
+            <p className="text-sm sm:text-lg font-medium capitalize">{key}</p>  
+          </div>  
+        ))}  
+      </div>  
+    </div>  
   );
 };
 
