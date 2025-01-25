@@ -6,6 +6,8 @@ export async function createUser(data: Omit<User, "id">): Promise<User> {
   return prisma.user.create({ data });
 }
 
+
+
 export async function getUserById(id: string): Promise<User | null> {
   return prisma.user.findUnique({ where: { id } });
 }
