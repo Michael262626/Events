@@ -1,48 +1,40 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { jsPDF } from "jspdf";
 import JsBarcode from "jsbarcode";
 import { useToast } from "@/hooks/use-toast";
+
 import { usePaystackPayment } from "react-paystack";
 
 const PaystackPayment: React.FC = () => {
-  const userDetails = JSON.parse(sessionStorage.getItem("userDetails") || "{}");
-  
-  const { email, fullName, phoneNumber } = userDetails;
-  console.log("User details", userDetails)
-  
-
-  const { toast } = useToast();
-  const publicKey = process.env.NEXT_PUBLIC_PAY_STACK_KEY!;
+  const [userDetails, setUserDetails] = useState({ email: "", fullName: "", phoneNumber: "" });
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const [amount, setAmount] = useState<number | "">(0); // State for the amount input
 
-  const userEmail = email;
-  const userFullName = fullName;
-  const userPhone = phoneNumber;
-  const logoUrl = "../../../../public/assets/Brand_logo_2[1].png";
-  console.log("Email:", userEmail); // Check email value
-  console.log("Public Key:", publicKey); // Check public key value
+  const { toast } = useToast();
+  const publicKey = process.env.NEXT_PUBLIC_PAY_STACK_KEY!;
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedDetails = sessionStorage.getItem("userDetails");
+      if (storedDetails) {
+        setUserDetails(JSON.parse(storedDetails));
+      }
+    }
+  }, []);
+
+  const { email, fullName, phoneNumber } = userDetails;
 
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setAmount(value === "" ? "" : parseInt(value, 10)); // Allow clearing input
   };
 
-  const config = {
-    reference: `${new Date().getTime()}`, // Unique transaction reference
-    userEmail,
-    amount: amount ? amount * 100 : 0, // Convert amount to kobo (smallest unit)
-    publicKey,
-  };
-
-  const initializePayment = usePaystackPayment(config);
-
   const generateTicket = (reference: string) => {
     const doc = new jsPDF();
+    const logoUrl = "/assets/Brand_logo_2[1].png"; // Use relative URL
 
     // Add logo as a watermark
     const imgWidth = 50;
@@ -57,9 +49,9 @@ const PaystackPayment: React.FC = () => {
 
     doc.setFontSize(12);
     doc.text(`Reference: ${reference}`, 20, 100);
-    doc.text(`Email: ${userEmail}`, 20, 110);
-    doc.text(`Full Name: ${userFullName}`, 20, 120);
-    doc.text(`Phone Number: ${userPhone}`, 20, 130);
+    doc.text(`Email: ${email}`, 20, 110);
+    doc.text(`Full Name: ${fullName}`, 20, 120);
+    doc.text(`Phone Number: ${phoneNumber}`, 20, 130);
     doc.text(`Amount: ₦${amount}`, 20, 140);
 
     // Generate barcode
@@ -84,9 +76,18 @@ const PaystackPayment: React.FC = () => {
     }
 
     setLoading(true);
+
+    const config = {
+      reference: `${new Date().getTime()}`, // Unique transaction reference
+      email,
+      amount: amount ? amount * 100 : 0, // Convert amount to kobo
+      publicKey,
+    };
+
+    const initializePayment = usePaystackPayment(config); // Initialize payment here
+
     initializePayment({
       onSuccess: async (reference: { reference: string }) => {
-        console.log("Payment Successful:", reference);
         setSuccess(true);
         setLoading(false);
 
@@ -104,8 +105,6 @@ const PaystackPayment: React.FC = () => {
           }
 
           const result = await response.json();
-          console.log("Payment verification result:", result);
-
           if (result.status === "success") {
             toast({
               title: "Success",
@@ -121,17 +120,13 @@ const PaystackPayment: React.FC = () => {
             });
           }
         } catch (error) {
-          console.error("Error verifying payment:", error);
           toast({
             title: "Error",
-            description:
-              "An error occurred while processing this transaction. Please try again!",
+            description: "An error occurred while processing this transaction. Please try again!",
           });
         }
       },
-      onClose: () => {
-        setLoading(false);
-      },
+      onClose: () => setLoading(false),
     });
   };
 
@@ -169,7 +164,7 @@ const PaystackPayment: React.FC = () => {
         )}
       </div>
     </div>
-  );  
+  );
 };
 
 export default PaystackPayment;
