@@ -1,11 +1,17 @@
-"use client"
+"use client";
 
 import { useRouter } from "next/navigation";
+import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 
 const SignUpPage: React.FC = () => {
   const router = useRouter();
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phoneNumber: "",
+  });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -14,34 +20,73 @@ const SignUpPage: React.FC = () => {
 
   const handleSignUp = async () => {
     try {
+      console.log("Sending request to /api/signup with data:", formData);
       const response = await fetch("/api/signup", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: { "Content-Type": "application/json" },
       });
-
+      console.log("Response", response);
+  
       if (response.ok) {
         const data = await response.json();
-        localStorage.setItem("userToken", data.token);
-        router.push("/transaction");
+        console.log("Data----->", data);
+
+        sessionStorage.setItem("userDetails", JSON.stringify(data.user));
+        const userDetails = JSON.parse(sessionStorage.getItem("userDetails") || "{}");
+        console.log("Retrieved userDetails:", userDetails);     
+  
+        toast({
+          title: "Sign Up successful!",
+          description: "You are now signed up. Redirecting to the transaction page.",
+        });
+        router.push("/transaction"); // Redirect to the transaction page
       } else {
-        console.error("Sign-up failed");
+        const errorData = await response.json();
+        console.error("Sign-up failed:", errorData.message, errorData.stack);
+        toast({
+          title: "Sign up failed",
+          description: errorData.message || "Something went wrong.",
+        });
       }
-    } catch (error) {
-      console.error("Error signing up:", error);
+    } catch (error: any) {
+      console.error("Error signing up:", error.message, error.stack);
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred.",
+      });
     }
   };
+  
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-black">
       <form
-        className="bg-[#0A0712] p-8 rounded shadow-md w-[35%]"
+        className="bg-[#0A0712] p-6 sm:p-8 rounded shadow-md w-full sm:w-[35%] mx-4"
         onSubmit={(e) => {
           e.preventDefault();
           handleSignUp();
         }}
       >
         <h1 className="text-2xl font-bold mb-4 text-center text-white">Sign Up</h1>
+        
+        {/* Full Name */}
+        <div className="mb-4">
+          <label htmlFor="fullName" className="block text-sm font-medium text-gray-400">
+            Full Name
+          </label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            value={formData.fullName}
+            onChange={handleInputChange}
+            required
+            className="mt-1 block w-full text-black px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+          />
+        </div>
+
+        {/* Email */}
         <div className="mb-4">
           <label htmlFor="email" className="block text-sm font-medium text-gray-400">
             Email
@@ -56,20 +101,23 @@ const SignUpPage: React.FC = () => {
             className="mt-1 block w-full text-black px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
           />
         </div>
+
+        {/* Phone Number */}
         <div className="mb-4">
-          <label htmlFor="password" className="block text-sm font-medium text-gray-400">
-            Password
+          <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-400">
+            Phone Number
           </label>
           <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
+            type="tel"
+            id="phoneNumber"
+            name="phoneNumber"
+            value={formData.phoneNumber}
             onChange={handleInputChange}
             required
-            className="mt-1 block text-black w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            className="mt-1 block w-full text-black px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
           />
         </div>
+
         <button
           type="submit"
           className="w-full bg-[#B30D5C] text-white py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"

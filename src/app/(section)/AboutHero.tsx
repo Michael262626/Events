@@ -13,13 +13,13 @@ const AboutHero = () => {
           className="h-[300px] md:h-[400px] w-full object-cover"  
         />  
         <h2 className="absolute text-white text-4xl md:text-6xl font-bold">About us</h2>  
-        <h2 className="absolute text-lg md:text-2xl mt-28 md:mt-36 font-bold">Home / <span className="text-gray-400">About us</span></h2>  
+        <h2 className="absolute text-lg md:text-2xl mt-28 md:mt-36 font-bold text-white">Home / <span className="text-gray-400">About us</span></h2>  
       </div>  
 
-      <div className="mt-6 md:mt-8 p-6 md:p-28 flex flex-col md:flex-row items-center md:justify-between">  
+      <div className="bg-black p-6 md:p-28 flex flex-col md:flex-row items-center md:justify-between">  
         <div className="text-center md:text-left">  
           <h1 className="text-pink-500 text-4xl md:text-5xl font-bold">Eventiva</h1>  
-          <p className="mt-4 text-xl md:text-2xl">  
+          <p className="mt-4 text-xl text-white md:text-2xl">  
             Where music and <br /> magic unite for <br /> unforgettable <br /> experiences  
           </p>  
           <button className="mt-6 px-4 py-2 md:px-6 md:py-3 bg-pink-500 hover:bg-pink-600 rounded-lg text-white font-bold">  

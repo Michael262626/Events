@@ -14,13 +14,13 @@ const AboutHero = () => {
         />  
 
         <h2 className="absolute text-white text-4xl md:text-6xl font-bold">Contact us</h2>  
-        <h2 className="absolute text-sm md:text-2xl mt-20 md:mt-36 font-bold">Home / <span className="text-gray-400">Contact us</span></h2>  
+        <h2 className="absolute text-white text-sm md:text-2xl mt-20 md:mt-36 font-bold">Home / <span className="text-gray-300">Contact us</span></h2>  
       </div>  
 
-      <div className="mt-4 p-6 md:p-28 flex flex-col md:flex-row items-center md:justify-between">  
+      <div className="bg-black p-6 md:p-28 flex flex-col md:flex-row items-center md:justify-between">  
         <div className="text-center md:text-left">  
           <h1 className="text-pink-500 text-4xl md:text-6xl font-bold">Eventiva</h1>  
-          <p className="mt-4 text-lg md:text-2xl">  
+          <p className="text-white mt-4 text-lg md:text-2xl">  
             Where music and <br /> magic unite for <br /> unforgettable <br /> experiences  
           </p>  
           <button className="mt-6 px-4 py-2 bg-pink-500 hover:bg-pink-600 rounded-lg text-white font-bold md:px-6 md:py-3">  

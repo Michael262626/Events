@@ -14,12 +14,12 @@ const VenuHero = () => {
         />  
 
         <h2 className="absolute text-white text-4xl md:text-6xl font-bold">Venue</h2>  
-        <h2 className="absolute text-sm md:text-2xl mt-24 md:mt-36 font-bold">Home / <span className="text-gray-400">Venue</span></h2>  
+        <h2 className="absolute text-white text-sm md:text-2xl mt-24 md:mt-36 font-bold">Home / <span className="text-gray-300">Venue</span></h2>  
       </div>  
 
-      <div className="mt-4 p-6 md:p-28 flex flex-col md:flex-row items-center md:justify-between">  
+      <div className="bg-black p-6 md:p-28 flex flex-col md:flex-row items-center md:justify-between">  
         <div className="text-center md:text-left">  
-        <p className="mt-4 text-3xl md:text-4xl whitespace-nowrap md:whitespace-normal">  
+        <p className="text-white mt-4 text-3xl md:text-4xl whitespace-nowrap md:whitespace-normal">  
           City Of Palms  
         </p> 
           <h1 className="text-pink-500 text-4xl mb-4 md:text-5xl font-bold">Anthony Village</h1>  
