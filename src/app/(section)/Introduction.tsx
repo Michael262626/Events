@@ -10,8 +10,8 @@ const SubBody = () => {
 
       <div className="flex flex-col lg:flex-row mt-12 lg:mt-24 justify-between">  
   <div className="mb-4 lg:mb-0">  
-    <p className="text-base sm:text-lg">Highlights</p>  {/* Smaller text size for mobile */}  
-    <div className="flex flex-col text-xl sm:text-2xl font-bold mb-2">Supporting</div>  {/* Reduced size */}  
+    <p className="text-base sm:text-3xl">Highlights</p>  
+    <div className="flex flex-col text-xl sm:text-5xl font-bold mb-2">Supporting</div>  {/* Reduced size */}  
     <div className="text-3xl sm:text-4xl font-extrabold mb-4 text-purple-600">Music Practitioners</div>  {/* Slightly reduced */}  
   </div>  
 
@@ -25,7 +25,7 @@ const SubBody = () => {
 </div>
       
       {/* Main Flex Layout */}  
-      <div className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between gap-6 mt-10">  
+      <div className="flex flex-col lg:flex-row items-center lg:justify-center gap-6 mt-10">  
         {/* Left Side: Rounded Boxes */}  
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">  
           <div className="border border-[#231E24] p-6 rounded-3xl flex flex-col shadow-lg">  
