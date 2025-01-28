@@ -18,10 +18,12 @@ const AboutHero = () => {
 
       <div className="bg-black p-6 md:p-28 flex flex-col md:flex-row items-center md:justify-between">  
         <div className="text-center md:text-left">  
-          <h1 className="text-pink-500 text-4xl md:text-5xl font-bold">Eventiva</h1>  
-          <p className="mt-4 text-xl text-white md:text-2xl">  
-            Where music and <br /> magic unite for <br /> unforgettable <br /> experiences  
-          </p>  
+          <h1 className="text-pink-500 text-4xl md:text-5xl font-bold">Advance 2025</h1>  
+          <p className="mt-4 text-xl text-white md:text-2xl">
+            <span className="block">Where music and magic unite</span>
+            <span className="block">for unforgettable experiences</span>
+          </p>
+
           <button className="mt-6 px-4 py-2 md:px-6 md:py-3 bg-pink-500 hover:bg-pink-600 rounded-lg text-white font-bold">  
             Get Ticket  
           </button>  

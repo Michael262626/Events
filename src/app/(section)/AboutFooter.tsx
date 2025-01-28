@@ -14,12 +14,12 @@ const AboutFooter = () => {
             <h3 className="text-lg md:text-xl font-semibold">Contact Musicfest</h3>  
           </div>  
 
-          <p className="text-3xl md:text-5xl font-bold">contact@mail.com</p>  
+          <p className="text-xl md:text-3xl font-bold">advancemusicconference@mail.com</p>  
           <div>  
-            <p className="font-bold text-xl md:text-3xl text-gray-500">BASEMENT</p>  
-            <p className="text-gray-500">135 W, 46th Street, New York, USA</p>  
+            <p className="font-bold text-xl md:text-3xl text-gray-500">City of Palms</p>  
+            <p className="text-gray-500">135 W, Faramobi Ajike Street, Anthony Village, Lagos</p>  
           </div>  
-          <p className="text-md md:text-base">+1800 123 456 789</p>  
+          <p className="text-md md:text-base">+2347064623411</p>  
           <div className="flex space-x-3 text-gray-400 text-lg md:text-xl">  
             <FaFacebookF className="hover:text-white cursor-pointer" />  
             <FaTwitter className="hover:text-white cursor-pointer" />  

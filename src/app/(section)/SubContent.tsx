@@ -1,5 +1,7 @@
 import Image from "next/image";  
-import Smj from "../../../public/assets/Smj.jpg";  
+import Smj from "../../../public/assets/Smj.jpg";
+import unknown from "../../../public/assets/Unknown.jpg";  
+
 import { GoDash } from "react-icons/go";  
 
 const SubContent = () => {  
@@ -40,24 +42,17 @@ const SubContent = () => {
             <div className="bg-gray-800 rounded-lg overflow-hidden w-full mx-auto md:w-2/5 relative">  
               <Image src={Smj} alt="Smj" className="w-full h-[220px] md:h-[330px] object-cover" />  
               <div className="absolute p-2 mt-36 inset-0 flex items-center justify-center bg-opacity-50">  
-                <h4 className="text-base font-bold text-white">Smj <br /> [Samuel Givenson]</h4>  
+                <h4 className="text-base font-bold text-white">Smj <br /> <span className="font-sans text-purple-500">Samuel Givenson</span>
+                </h4>  
               </div>  
             </div>  
             {/* Card 2 */}  
             <div className="bg-gray-800 rounded-lg overflow-hidden w-full mx-auto md:w-2/5 relative">  
-              <Image src={Smj} alt="Smj" className="w-full h-[220px] md:h-[330px] object-cover" />  
+              <Image src={unknown} alt="Smj" className="w-full h-[220px] md:h-[330px] object-cover" />  
               <div className="absolute p-2 mt-36 inset-0 flex items-center justify-center bg-opacity-50">  
-                <h4 className="text-base font-bold text-white">Smj <br /> [Samuel Givenson]</h4>  
+                <h4 className="text-base font-bold text-white">Unknown <br /> <span className="font-sans text-purple-500">Guess the special guest</span> </h4>  
               </div>  
-            </div>  
-
-            {/* Card 3 */}  
-            <div className="bg-gray-800 rounded-lg overflow-hidden w-full mx-auto md:w-2/5 relative">  
-              <Image src={Smj} alt="Smj" className="w-full h-[220px] md:h-[330px] object-cover" />  
-              <div className="absolute p-2 mt-36 inset-0 flex items-center justify-center bg-opacity-50">  
-                <h4 className="text-base font-bold text-white">Smj <br /> [Samuel Givenson]</h4>  
-              </div>  
-            </div>  
+            </div>
           </div>  
         </div>  
       </div>  

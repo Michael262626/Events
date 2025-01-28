@@ -18,7 +18,10 @@ const Navbar = () => {
     } else {  
       router.push("/sign-up"); // Redirect to sign-up page  
     }  
-  };  
+  }; 
+  const handleHome = ()=> {
+    router.push("/home")
+  }
 
   const isActive = (path: string) => pathname === path;  
 
@@ -30,7 +33,7 @@ const Navbar = () => {
     <div className="bg-black text-white px-4 sm:px-12 py-4 flex items-center justify-between sticky top-0 z-50">  
       {/* Logo Section */}  
       <div className="flex items-center space-x-2">  
-        <Image src={logo} width={80} height={15} alt="Logo" className="sm:w-[150px] sm:h-[40px]" />  
+        <Image src={logo} width={80} height={15} alt="Logo" onClick={handleHome} className="sm:w-[150px] sm:h-[40px]" />  
       </div>  
 
       {/* Navigation Links and Buy Ticket Button */}  

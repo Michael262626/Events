@@ -1,10 +1,49 @@
+"use client"
+
 import Image from "next/image";  
 import instagram from "../../../public/assets/ig.png";  
-import youtube from "../../../public/assets/youtube1.png";  
+import youtube from "../../../public/assets/youtube1.png"; 
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+
+const images = [
+  '/assets/background.jpeg',
+  '/assets/Image.jpg',
+  '/assets/dImage2.jpg',
+  '/assets/dImage3.jpg',
+]; 
 
 const Body = () => {  
+
+   const [currentImage, setCurrentImage] = useState(0);
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentImage((prev) => (prev + 1) % images.length);
+      }, 4000); // Change image every 3 seconds
+      return () => clearInterval(interval);
+    }, []);
+
   return (  
-    <div className="bg-[url('/assets/background.jpeg')] h-screen bg-cover bg-center relative text-white">  
+    <div className="h-screen w-full bg-cover bg-center relative text-white flex justify-center items-center">
+     <AnimatePresence mode="popLayout">
+        {images.map((image, index) =>
+        index === currentImage ? (
+      <motion.img
+          key={image}
+          src={image}
+          alt={`Background ${index + 1}`}
+          className="absolute inset-0 w-full h-full object-cover"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ opacity: { duration: 1.5, overlap: 0.5 } }} // Add overlap
+        />
+      ) : null
+    )}
+  </AnimatePresence>
+
+
       {/* Main Content */}  
       <div className="relative flex flex-col p-5 md:p-20">  
         {/* Hashtag */}  

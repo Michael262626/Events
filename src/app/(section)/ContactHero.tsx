@@ -1,9 +1,18 @@
+"use client";
+
 import Light from "../../../public/assets/contact origin.png";  
+import { useRouter } from "next/navigation";
 import piano from "../../../public/assets/Neon Piano.jpeg";  
 import guitar from "../../../public/assets/Free Photo _ Closeup of a man playing the bass guitar.jpeg";  
 import Image from "next/image";  
 
 const AboutHero = () => {  
+ const router = useRouter();  
+
+    const handleTicketBuying = () =>{
+      router.push("/sign-up")
+    }
+
   return (  
     <div className="relative flex flex-col">  
       <div className="relative flex flex-col justify-center items-center">  
@@ -19,11 +28,12 @@ const AboutHero = () => {
 
       <div className="bg-black p-6 md:p-28 flex flex-col md:flex-row items-center md:justify-between">  
         <div className="text-center md:text-left">  
-          <h1 className="text-pink-500 text-4xl md:text-6xl font-bold">Eventiva</h1>  
-          <p className="text-white mt-4 text-lg md:text-2xl">  
-            Where music and <br /> magic unite for <br /> unforgettable <br /> experiences  
-          </p>  
-          <button className="mt-6 px-4 py-2 bg-pink-500 hover:bg-pink-600 rounded-lg text-white font-bold md:px-6 md:py-3">  
+          <h1 className="text-pink-500 text-4xl md:text-6xl font-bold">Advance 2025</h1>  
+          <p className="mt-4 text-xl text-white md:text-2xl">
+            <span className="block">Where music and magic unite</span>
+            <span className="block">for unforgettable experiences</span>
+          </p> 
+          <button className="mt-6 px-4 py-2 bg-pink-500 hover:bg-pink-600 rounded-lg text-white font-bold md:px-6 md:py-3" onClick={handleTicketBuying}>  
             Get Ticket  
           </button>  
         </div>  

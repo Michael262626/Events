@@ -1,7 +1,18 @@
+"use client";
+
 import Image from "next/image";  
 import music from "../../../public/assets/musicc.jpeg";  
+import { useRouter } from "next/navigation";
+
+
 
 const AboutSubFooter = () => {  
+    const router = useRouter();  
+
+    const handleTicketBuying = () =>{
+      router.push("/sign-up")
+    }
+  
   return (  
     <div className="relative bg-black text-white py-8 md:py-12"> {/* Adjusted padding for better mobile view */}  
       <div className="container mx-auto p-6 md:p-12"> {/* Adjusted padding for smaller screens */}  
@@ -34,7 +45,7 @@ const AboutSubFooter = () => {
 
             {/* Button moved to bottom left */}  
             <div className="absolute -bottom-6 left-8 md:left-12"> {/* Adjusted button positioning */}  
-              <button className="px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-md shadow-lg hover:scale-105 transform transition">  
+              <button className="px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-md shadow-lg hover:scale-105 transform transition" onClick={handleTicketBuying}>  
                 Get Ticket  
               </button>  
             </div>  

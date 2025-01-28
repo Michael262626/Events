@@ -10,7 +10,7 @@ const AboutContent = () => {
         <div>  
           <div className="flex items-center gap-3">  
             <div className="w-6 h-1 bg-pink-500"></div>  
-            <h3 className="text-lg font-semibold">Behind The Eventiva</h3>  
+            <h3 className="text-lg font-semibold">Behind The Advance 2025</h3>  
           </div>  
           <h1 className="text-3xl md:text-4xl font-bold text-white mt-2">  
             Creative <br /> <span className="text-pink-500">Commanders</span>  
@@ -31,54 +31,15 @@ const AboutContent = () => {
         {/* Profile 1 */}  
         <div className="relative group w-52 md:w-60 h-64 md:h-80 rounded-lg overflow-hidden bg-gray-800">  
           <Image  
-            src={debs} // Replace with your actual image path  
+            src={debs} 
             alt="Profile 1"  
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"  
           />  
           <div className="absolute bottom-0 left-0 w-full bg-gray-800 bg-opacity-75 py-3 text-center">  
             <h2 className="text-white text-xl md:text-2xl font-semibold">Deborah Joseph</h2>  
-            <p className="text-gray-400 text-md md:text-xl">Event Director</p>  
+            <p className="text-gray-400 text-md md:text-xl">Advance Trainer</p>  
           </div>  
-        </div>  
-
-        {/* Profile 2 */}  
-        <div className="relative group w-52 md:w-60 h-64 md:h-80 rounded-lg overflow-hidden bg-gray-800">  
-          <Image  
-            src={debs} // Replace with your actual image path  
-            alt="Profile 2"  
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"  
-          />  
-          <div className="absolute bottom-0 left-0 w-full bg-gray-800 bg-opacity-75 py-3 text-center">  
-            <h2 className="text-white text-xl md:text-2xl font-semibold">Deborah Joseph</h2>  
-            <p className="text-gray-400 text-md md:text-xl">Event Director</p>  
-          </div>  
-        </div>  
-
-        {/* Profile 3 */}  
-        <div className="relative group w-52 md:w-60 h-64 md:h-80 rounded-lg overflow-hidden bg-gray-800">  
-          <Image  
-            src={debs} // Replace with your actual image path  
-            alt="Profile 3"  
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"  
-          />  
-          <div className="absolute bottom-0 left-0 w-full bg-gray-800 bg-opacity-75 py-3 text-center">  
-            <h2 className="text-white text-xl md:text-2xl font-semibold">Deborah Joseph</h2>  
-            <p className="text-gray-400 text-md md:text-xl">Event Director</p>  
-          </div>  
-        </div>  
-
-        {/* Profile 4 */}  
-        <div className="relative group w-52 md:w-60 h-64 md:h-80 rounded-lg overflow-hidden bg-gray-800">  
-          <Image  
-            src={debs} // Replace with your actual image path  
-            alt="Profile 4"  
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"  
-          />  
-          <div className="absolute bottom-0 left-0 w-full bg-gray-800 bg-opacity-75 py-3 text-center">  
-            <h2 className="text-white text-xl md:text-2xl font-semibold">Deborah Joseph</h2>  
-            <p className="text-gray-400 text-md md:text-xl">Event Director</p>  
-          </div>  
-        </div>  
+        </div>          
       </div>  
     </div>  
   );  
