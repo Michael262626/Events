@@ -30,7 +30,7 @@ const Footer = () => {
               </span>  
             </h2>  
             <p className="text-gray-400 mt-4 text-sm md:text-base">  
-              Become Part of Our Harmonious Community and Receive Exclusive  
+              Become Part of Our Advance Community and Receive Exclusive  
               Updates, Special Offers, and Exciting News about the Festival  
               Straight to Your Inbox.  
             </p>  
@@ -51,7 +51,7 @@ const Footer = () => {
           <div className="flex-1">  
             <h4 className="text-lg font-bold flex items-center gap-2">  
               <span className="w-6 h-1 bg-pink-500"></span>  
-              Harmonia Wayfinder  
+              Advance Wayfinder  
             </h4>  
             <div className="mt-4 bg-gray-800 rounded-2xl p-4">  
               <div className="flex flex-col items-center justify-center">  

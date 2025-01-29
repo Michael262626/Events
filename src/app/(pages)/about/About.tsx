@@ -12,7 +12,7 @@ const About =()=>{
         <>
             <Navbar/>
             <AboutHero/>
-            <AboutContent/>
+            {/* <AboutContent/> */}
             <AboutSubContent/>
             <EventsCount/>
             <AboutSubFooter/>

@@ -13,11 +13,11 @@ const AboutSubContent = () => {
               <h2 className="text-xl md:text-2xl font-semibold mb-2">Benefits</h2>  
             </div>  
             <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-4">  
-              What <br /> <span className="text-purple-500">Will You Get</span>  
+            What to expect <br /> from Advance <br /> <span className="text-purple-500"> Music Ministers training Conferencer</span>  
             </h3>  
           </div>  
           <div className="md:w-1/2 text-right">  
-            <p className="text-gray-400 text-sm md:text-base max-w-xl">  
+            <p className="text-gray-400 text-sm md:text-xl max-w-xl">  
               Immerse in mesmerizing performances, vibrant <br /> soundscapes,  
               and interactive art at our music <br />  
               extravaganza. Experience a festival atmosphere like <br /> no other.  

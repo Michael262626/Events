@@ -17,17 +17,17 @@ const Content = () => {
             Legendary <br /> <span className="text-purple-500">Uncle Ben</span>  
           </h1>  
           <p className="text-gray-500 text-base md:text-lg">  
-            Witness Aiden Melisma's enchanting performance. Renowned for soulful melodies,  
-            his talent adds a unique dimension to Harmonia. Don't miss this captivating experience.  
+            Witness Uncle ben  enchanting performance. Renowned for soulful melodies,  
+            his talent adds a unique dimension in Advance 2025. Don't miss this captivating experience.  
           </p>  
           <div className="space-y-4 md:space-y-6">  
             {/* Award Item */}  
             <div className="flex items-start gap-3 md:gap-4">  
               <span className="text-pink-500 text-2xl md:text-3xl">🏆</span>  
               <div>  
-                <h3 className="font-semibold text-base md:text-lg">Grammy Awards</h3>  
+                <h3 className="font-semibold text-base md:text-lg"> Award winning internation vocal coach</h3>  
                 <p className="text-gray-500 text-sm md:text-base">  
-                  Aiden Melisma's melodies enchanted hearts, winning him the Grammy for "Best Contemporary Album."  
+                Uncle ben is an Award winning internation vocal coach, mentor and vocal director.
                 </p>  
               </div>  
             </div>  
@@ -35,9 +35,9 @@ const Content = () => {
             <div className="flex items-start gap-3 md:gap-4">  
               <span className="text-pink-500 text-2xl md:text-3xl">🎵</span>  
               <div>  
-                <h3 className="font-semibold text-base md:text-lg">Billboard Music Awards</h3>  
+                <h3 className="font-semibold text-base md:text-lg">MTN Project Fame</h3>  
                 <p className="text-gray-500 text-sm md:text-base">  
-                  Aiden Melisma's melodies enchanted hearts, winning him the Grammy for "Best Contemporary Album."  
+                One of the very best out of africa. He built and furnished hundreds of talent on the famous MTN Project Fame. Some of whom are raising bars in their craft today.
                 </p>  
               </div>  
             </div>  

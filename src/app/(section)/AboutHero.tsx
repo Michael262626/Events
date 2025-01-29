@@ -18,8 +18,8 @@ const AboutHero = () => {
 
       <div className="bg-black p-6 md:p-28 flex flex-col md:flex-row items-center md:justify-between">  
         <div className="text-center md:text-left">  
-          <h1 className="text-pink-500 text-4xl md:text-5xl font-bold">Advance 2025</h1>  
-          <p className="mt-4 text-xl text-white md:text-2xl">
+          <h1 className="text-pink-500 text-4xl md:text-6xl font-bold">Advance 2025</h1>  
+          <p className="mt-4 text-xl text-white md:text-3xl">
             <span className="block">Where music and magic unite</span>
             <span className="block">for unforgettable experiences</span>
           </p>
@@ -34,8 +34,8 @@ const AboutHero = () => {
             <Image  
               src={piano}  
               alt="Event"  
-              width={300}  
-              className="rounded-xl h-[150px] md:h-[200px] opacity-70"  
+              width={600}  
+              className="rounded-xl h-[150px] md:h-[400px] opacity-70"  
             />  
           </div>  
 
@@ -44,8 +44,8 @@ const AboutHero = () => {
             <Image  
               src={guitar}  
               alt="Event 2"  
-              width={400}  
-              className="rounded-xl h-[200px] md:h-[250px]"  
+              width={600}  
+              className="rounded-xl h-[200px] md:h-[350px]"  
             />  
           </div>  
         </div>  

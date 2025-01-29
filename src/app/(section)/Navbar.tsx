@@ -70,7 +70,7 @@ const Navbar = () => {
           onClick={handleClick}  
           className="bg-gradient-to-r from-pink-600 to-purple-600 text-white px-4 py-2 rounded flex items-center space-x-2 text-base"  
         >  
-          <span>Buy Ticket</span>  
+          <span>Get Ticket</span>  
         </button>  
       </div>  
 
@@ -123,7 +123,7 @@ const Navbar = () => {
             onClick={handleClick}  
             className="bg-gradient-to-r from-pink-600 to-purple-600 text-white px-4 py-2 rounded flex items-center space-x-2 text-base mt-4"  
           >  
-            <span>Buy Ticket</span>  
+            <span>Get Ticket</span>  
           </button>  
         </div>  
       )}  

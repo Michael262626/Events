@@ -14,7 +14,7 @@ const AboutFooter = () => {
             <h3 className="text-lg md:text-xl font-semibold">Contact Musicfest</h3>  
           </div>  
 
-          <p className="text-xl md:text-3xl font-bold">advancemusicconference@mail.com</p>  
+          <p className="text-lg md:text-xl font-bold">advancemusicconference@gmail.com</p>  
           <div>  
             <p className="font-bold text-xl md:text-3xl text-gray-500">City of Palms</p>  
             <p className="text-gray-500">135 W, Faramobi Ajike Street, Anthony Village, Lagos</p>  

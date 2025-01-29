@@ -44,8 +44,8 @@ const AboutHero = () => {
             <Image  
               src={piano}  
               alt="Event"  
-              width={250} // Adjusted width for mobile  
-              className="rounded-xl"  
+              width={600}  
+              className="rounded-xl h-[150px] md:h-[350px] opacity-70"
             />  
           </div>  
 
@@ -54,8 +54,8 @@ const AboutHero = () => {
             <Image  
               src={guitar}  
               alt="Event 2"  
-              width={350} // Adjusted width for mobile  
-              className="rounded-xl"  
+              width={600}  
+              className="rounded-xl h-[200px] md:h-[350px]"  
             />  
           </div>  
         </div>  

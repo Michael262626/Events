@@ -13,16 +13,16 @@ const VenueContent = () => {
         <div>  
           <div className="flex items-center gap-3">  
             <div className="w-6 h-1 bg-pink-500"></div>  
-            <h3 className="text-lg font-semibold">Hall View</h3>  
+            <h3 className="text-lg md:text-3xl font-semibold">Hall View</h3>  
           </div>  
-          <h1 className="text-3xl md:text-4xl font-bold text-white mt-2">  
+          <h1 className="text-3xl md:text-5xl font-bold text-white mt-2">  
             The <br /> <span className="text-pink-500">Conference Hall</span>  
           </h1>  
         </div>  
 
         {/* Description Section */}  
         <div>  
-          <p className="text-right text-gray-500 text-sm md:text-base">  
+          <p className="text-right text-gray-500 md:3xl">  
             Immerse in mesmerizing performances and  
             <br /> interactive art at our music extravaganza. Experience <br /> a festival atmosphere like no other.  
           </p>  
