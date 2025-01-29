@@ -34,9 +34,9 @@ const SubFooter = () => {
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 my-4 md:my-8">  
             <Image src={youtube} width={150} alt="Youtube" />  
             <Image src={instagram} width={150} alt="Instagram" />  
-            <img src="https://via.placeholder.com/80" alt="Zelle" className="h-12 md:h-16" />  
+            {/* <img src="https://via.placeholder.com/80" alt="Zelle" className="h-12 md:h-16" />  
             <img src="https://via.placeholder.com/80" alt="Rackspace" className="h-12 md:h-16" />  
-            <img src="https://via.placeholder.com/80" alt="Amazon" className="h-12 md:h-16" />  
+            <img src="https://via.placeholder.com/80" alt="Amazon" className="h-12 md:h-16" />   */}
           </div>  
 
           {/* Call to Action */}  

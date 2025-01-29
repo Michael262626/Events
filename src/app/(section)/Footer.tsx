@@ -34,16 +34,17 @@ const Footer = () => {
               Updates, Special Offers, and Exciting News about the Festival  
               Straight to Your Inbox.  
             </p>  
-            <div className="mt-6 flex items-center border border-gray-400 rounded-lg p-2">  
+            {/* <div className="mt-6 flex items-center border border-gray-400 rounded-lg p-2 max-w-xs w-full mx-auto sm:max-w-md">  
               <input  
                 type="email"  
                 placeholder="Enter your Email"  
                 className="bg-transparent text-gray-300 outline-none flex-1 px-4"  
               />  
-              <button className="text-white text-lg bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-2 rounded-lg">  
-                →  
-              </button>  
-            </div>  
+                <button className="text-white text-lg bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-2 rounded-lg">  
+                  →  
+                </button>  
+            </div> */}
+
           </div>  
 
           {/* Right Section */}  
