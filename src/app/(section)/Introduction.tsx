@@ -33,7 +33,7 @@ const SubBody = () => {
             <div className="text-pink-500 mt-6 mb-4 flex justify-center">  
               <MdKeyboardVoice  size={40} />  
             </div>  
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-center">Voice Training or <br /> The lead singer training</h3>  
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-center">Voice Training and <br /> The lead singers training</h3>  
           </div>
 
           <div className="border border-[#231E24] p-6 rounded-3xl flex flex-col shadow-lg">  
