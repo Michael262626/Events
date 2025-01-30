@@ -14,9 +14,8 @@ const SubBody = () => {
 
       <div className="flex flex-col lg:flex-row mt-12 lg:mt-24 justify-center">  
         <div className="mb-4 lg:mb-0">  
-          <p className="text-base sm:text-3xl">What to Expect From</p>   
-              
-                <Image src={logo} width={80} height={35} alt="Logo" className="sm:w-[280px] sm:h-[65px]" />   
+          <p className="text-xl sm:text-3xl">What to Expect From</p>   
+                <Image src={logo} width={90} height={35} alt="Logo" className="-ml-2 sm:w-[280px] sm:h-[70px]" />   
               
             </div>  
 
