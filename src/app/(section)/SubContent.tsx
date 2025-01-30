@@ -15,7 +15,7 @@ const SubContent = () => {
         <div className="text-center mb-8 overflow-hidden">  
           <h1 className="text-[50px] md:text-[100px] font-bold uppercase tracking-wide text-white whitespace-nowrap">  
             <span className="inline-block animate-move-text">  
-            ADVANCE YOUR CRAFT<span className="text-purple-500">LIKE NEVER</span> BEFORE  
+            ADVANCE YOUR CRAFT<span className="text-purple-500"> LIKE NEVER</span> BEFORE  
             </span>  
           </h1>  
         </div>  
@@ -31,7 +31,7 @@ const SubContent = () => {
             </h2>  
 
             <h3 className="text-3xl md:text-6xl font-extrabold text-white mb-6">  
-              Rhythm <br /> <span className="text-purple-500">Revelations</span>  
+              Advance <br /> <span className="text-purple-500">Conference Trainers</span>  
             </h3>  
             <p className="text-sm md:text-base text-gray-500">  
               Unleash the rhythm with an <br /> extraordinary lineup. Get ready for a <br /> musical  
