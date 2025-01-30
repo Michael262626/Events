@@ -16,10 +16,10 @@ const Content = () => {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">  
             Legendary <br /> <span className="text-purple-500">Uncle Ben</span>  
           </h1>  
-          <p className="text-gray-500 text-base md:text-lg">  
+          {/* <p className="text-gray-500 text-base md:text-lg">  
             Witness Uncle ben  enchanting performance. Renowned for soulful melodies,  
             his talent adds a unique dimension in Advance 2025. Don't miss this captivating experience.  
-          </p>  
+          </p>   */}
           <div className="space-y-4 md:space-y-6">  
             {/* Award Item */}  
             <div className="flex items-start gap-3 md:gap-4">  

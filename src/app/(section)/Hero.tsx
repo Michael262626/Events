@@ -72,7 +72,7 @@ const Body = () => {
         </div>   */}
 
         {/* Event Details Section */}  
-        <div className="border border-gray-500 bg-gradient-to-r from-[#1F1A22] to-[#040009] bg-opacity-80 p-5 md:p-10 rounded-2xl shadow-md flex flex-col md:flex-row justify-center items-start gap-14 mt-12 max-w-8xl mx-auto">  
+        <div className="border border-gray-500 bg-gradient-to-r from-[#1F1A22] to-[#040009] bg-opacity-80 p-5 md:p-10 rounded-2xl shadow-md flex flex-col md:flex-row justify-center items-start md:gap-14 gap-4 mt-12 max-w-8xl mx-auto">  
           <div className="flex flex-col items-start">  
             <p className="text-gray-400 text-xl md:text-4xl font-bold">1st Mar 2025</p>  
             <p className="font-semibold text-lg md:text-2xl">09:00am</p>  
