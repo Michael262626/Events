@@ -22,16 +22,20 @@ const Footer = () => {
               <span className="w-6 h-1 bg-pink-500"></span>  
               Schedule  
             </h4>  
-            <h2 className="text-3xl md:text-4xl font-extrabold mt-4">  
-              Sonic <br />  
+            <h2 className="text-2xl md:text-4xl font-extrabold mt-4">  
+            Why you must be at
+            <br />  
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">  
-                Dispatch  
+              ADVANCE   
               </span>  
             </h2>  
             <p className="text-gray-400 mt-4 text-sm md:text-base">  
-              Become Part of Our Advance Community and Receive Exclusive  
-              Updates, Special Offers, and Exciting News about the Festival  
-              Straight to Your Inbox.  
+            Knowledge money can't buy, Meet other talented minstrels, 
+            Its an opportunity for a retreat, 
+            LINK up with career changing professionals, 
+            you will have a new mindset and spark for your talent.
+             Continued Mentorship and support,
+              you just might be picked for some of our sponsorship..  
             </p>  
           </div>  
 

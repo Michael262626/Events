@@ -1,7 +1,9 @@
 import { GoArrowUpRight } from "react-icons/go";  
 import Image from "next/image";  
 import youtube from "../../../public/assets/youtube1.png";  
-import instagram from "../../../public/assets/ig.png";  
+import instagram from "../../../public/assets/ig.png";
+import whatsapp from "../../../public/assets/Whatsapp-removebg-preview.png";
+  
 
 const SubFooter = () => {  
   return (  
@@ -16,29 +18,39 @@ const SubFooter = () => {
                 The Power Behind Us  
               </h2>  
               <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-3">  
-                Cadence <br />  
-                <span className="text-purple-500">Contributors</span>  
+              DO YOU NEED <br />  
+                <span className="text-purple-500"> A MANAGEMENT?
+                </span>  
               </h3>  
             </div>  
 
             {/* Right Section */}  
             <div className="text-right lg:w-1/2">  
               <p className="text-sm md:text-gray-400 text-gray-400 max-w-lg mx-auto lg:mx-0">  
-                Elevating the Music. Our valued partners <br /> and sponsors play a pivotal role in bringing our vision to <br /> life. We orchestrate an unforgettable music <br /> celebration that resonates.  
+              You are an artiste, a brand, a Worshipper <br /> and you need a management to structure your brand, <br /> promote your sound and plan your projects 
+              <br /> Advance talent management is probably waiting to meet you.  
               </p>  
             </div>  
           </div>  
 
           {/* Logos Section */}  
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 my-2 md:my-4">  
-            <Image src={youtube} width={150} alt="Youtube" />  
-            <Image src={instagram} width={150} alt="Instagram" />  
+          <div className="flex justify-center items-center gap-4 md:gap-8 my-2 md:my-4">  
+          <a href=" https://wa.me/message/6PDU7PN4O24KK1" target="_blank" rel="noopener noreferrer">
+          </a>
+            <Image src={whatsapp} width={50} alt="Whatsapp"/> 
+            <h3 className="text-white mr-4">Whatsapp</h3> 
+            <a href="https://www.instagram.com/advancetalenthq?igsh=MWh0YjVpYzl3bmF0aQ==" target="_blank" rel="noopener noreferrer">
+              <Image src={instagram} width={150} alt="Instagram" />
+            </a>
+            {/* <a href="https://www.instagram.com/advancetalenthq?igsh=MWh0YjVpYzl3bmF0aQ==" target="_blank" rel="noopener noreferrer">
+              <Image src={instagram} width={150} alt="Instagram" />
+            </a> */}
           </div>  
 
           {/* Call to Action */}  
           <div className="flex justify-center">  
             <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-5 py-2 rounded-lg text-lg font-bold hover:shadow-lg transition flex items-center justify-center gap-2">  
-              Become A Sponsor  
+              Sign Up  
               <GoArrowUpRight />  
             </button>  
           </div>  

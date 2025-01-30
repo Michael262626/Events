@@ -11,7 +11,7 @@ const Content = () => {
         <div className="md:w-1/2 space-y-4 md:space-y-6">  
           <h2 className="text-lg md:text-xl font-semibold flex items-center gap-3">  
             <span className="bg-pink-500 h-0.5 w-12"></span>  
-            Special Guest Spotlight  
+            Legendary Spotlight  
           </h2>  
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">  
             Legendary <br /> <span className="text-purple-500">Uncle Ben</span>  
