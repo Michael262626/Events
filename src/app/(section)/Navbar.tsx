@@ -33,7 +33,7 @@ const Navbar = () => {
     <div className="bg-black text-white px-4 sm:px-12 py-4 flex items-center justify-between sticky top-0 z-50">  
       {/* Logo Section */}  
       <div className="flex items-center space-x-2">  
-        <Image src={logo} width={120} height={15} alt="Logo" onClick={handleHome} className="sm:w-[150px] sm:h-[40px]" />  
+        <Image src={logo} width={170} height={25} alt="Logo" onClick={handleHome} className="sm:w-[150px] sm:h-[40px]" />  
       </div>  
 
       {/* Navigation Links and Buy Ticket Button */}  

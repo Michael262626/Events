@@ -6,15 +6,14 @@ import Image from "next/image";
 
 const Footer = () => {  
   const handleMapClick = () => {  
-    // Redirects to Google Maps with a specific address  
     const address = "Anthony Village, 34-36 Faramobi Ajike Street, Lagos";  
-    const encodedAddress = encodeURIComponent(address); // Encode the address for URL  
+    const encodedAddress = encodeURIComponent(address);  
     const googleMapsUrl = `https://www.google.com/maps?q=${encodedAddress}`;  
     window.open(googleMapsUrl, "_blank");  
   };  
 
   return (  
-    <div className="flex flex-col bg-black text-white py-8 md:py-16 justify-center items-center min-h-screen">  
+    <div className="flex flex-col bg-black text-white py-6 md:py-10 justify-center items-center">  
       <div className="border p-6 md:p-12 justify-center items-center w-[90%] md:w-[85%] rounded-2xl border-gray-300 bg-gradient-to-r from-black to-gray-900">  
         <div className="flex flex-col lg:flex-row justify-between items-start gap-6 md:gap-8">  
           {/* Left Section */}  
@@ -34,17 +33,6 @@ const Footer = () => {
               Updates, Special Offers, and Exciting News about the Festival  
               Straight to Your Inbox.  
             </p>  
-            {/* <div className="mt-6 flex items-center border border-gray-400 rounded-lg p-2 max-w-xs w-full mx-auto sm:max-w-md">  
-              <input  
-                type="email"  
-                placeholder="Enter your Email"  
-                className="bg-transparent text-gray-300 outline-none flex-1 px-4"  
-              />  
-                <button className="text-white text-lg bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-2 rounded-lg">  
-                  →  
-                </button>  
-            </div> */}
-
           </div>  
 
           {/* Right Section */}  
@@ -67,7 +55,8 @@ const Footer = () => {
           </div>  
         </div>  
       </div>  
-      <div className="flex flex-col p-12 md:flex-row mt-8 md:mt-12 gap-8 justify-between items-center w-full bg-black text-white">  
+      <div className="flex flex-col p-6 md:flex-row mb-2 md:mt-6 gap-2 justify-between items-center w-full bg-black text-white"> 
+        <h2 className="text-gray-400">@2025</h2>   
         <Image src={logo} width={150} height={20} alt="Logo" className="md:w-[250px] md:h-auto" />  
         <div className="flex gap-4 text-gray-400">  
           <a href="/privacy-policy" className="hover:text-white text-sm md:text-base">  
@@ -76,7 +65,6 @@ const Footer = () => {
           <a href="/terms-and-conditions" className="hover:text-white text-sm md:text-base">  
             Terms & Conditions  
           </a>  
-          <h2 className="text-gray-400">@2025</h2>  
         </div>  
       </div>  
     </div>  

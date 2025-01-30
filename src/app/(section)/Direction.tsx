@@ -4,15 +4,14 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 const Direction = () => {  
   const handleMapClick = () => {  
-    // Redirects to Google Maps with a specific address  
     const address = "Anthony Village, 34-36 Faramobi Ajike Street, Lagos";  
-    const encodedAddress = encodeURIComponent(address); // Encode the address for URL  
+    const encodedAddress = encodeURIComponent(address);  
     const googleMapsUrl = `https://www.google.com/maps?q=${encodedAddress}`;  
     window.open(googleMapsUrl, "_blank");  
   };  
 
   return (  
-    <div className="bg-black text-white min-h-screen flex items-center justify-center">  
+    <div className="bg-black py-6 text-white flex items-center justify-center">  
       <div className="max-w-7xl w-full bg-[#181818] rounded-lg p-6 md:p-8 md:flex md:space-x-6">  
         {/* Left Section */}  
         <div className="flex-1 mb-6 md:mb-0">  
@@ -54,7 +53,7 @@ const Direction = () => {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">  
             <div className="flex flex-col items-center justify-center">  
               <FaMapMarkerAlt  
-                className="text-red-500 text-[80px] md:text-[120px] cursor-pointer hover:scale-110 transition-transform" // Adjusted size for mobile  
+                className="text-red-500 text-[80px] md:text-[120px] cursor-pointer hover:scale-110 transition-transform"  
                 onClick={handleMapClick}  
               />  
               <p className="text-center text-gray-600 mt-2 text-sm md:text-base">  

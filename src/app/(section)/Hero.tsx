@@ -6,6 +6,7 @@ import youtube from "../../../public/assets/youtube1.png";
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { useRouter } from "next/navigation";
+import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 
 const images = [
   '/assets/music.jpg',
@@ -72,15 +73,24 @@ const Body = () => {
         </div>   */}
 
         {/* Event Details Section */}  
-        <div className="border border-gray-500 bg-gradient-to-r from-[#1F1A22] to-[#040009] bg-opacity-80 p-5 md:p-10 rounded-2xl shadow-md flex flex-col md:flex-row justify-center items-start md:gap-14 gap-4 mt-12 max-w-8xl mx-auto">  
-          <div className="flex flex-col items-start">  
-            <p className="text-gray-400 text-xl md:text-4xl font-bold">1st Mar 2025</p>  
-            <p className="font-semibold text-lg md:text-2xl">09:00am</p>  
-          </div>  
-          <div className="flex flex-col items-start">  
-            <p className="text-gray-400 text-xl md:text-4xl font-bold">Anthony Village</p>  
-            <p className="font-semibold text-lg md:text-2xl">34-36, Faramobi Ajike Street, Lagos</p>  
-          </div>  
+        <div className="border border-purple-500 bg-gradient-to-r from-[#1F1A22] to-[#040009] bg-opacity-80 p-5 md:p-10 rounded-2xl shadow-md flex flex-col md:flex-row justify-center items-start md:gap-14 gap-4 mt-12 max-w-8xl mx-auto">  
+        <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <FaCalendarAlt className="text-purple-600 text-3xl md:text-4xl" />
+            <div>
+            <p className="text-purple-500 text-xl md:text-4xl font-bold">1st Mar 2025</p>
+              <p className="font-semibold text-lg md:text-2xl">09:00am</p>
+        </div>
+    </div>
+    <div className="flex items-center gap-3">
+      <FaMapMarkerAlt className="text-purple-600 text-3xl md:text-4xl" />
+    <div>
+      <p className="text-purple-400 text-xl md:text-4xl font-bold">Anthony Village</p>
+      <p className="font-semibold text-lg md:text-2xl">34-36, Faramobi Ajike Street, Lagos</p>
+    </div>
+    </div>
+  </div>
+
           {/* <div className="flex flex-col items-start">  
             <p className="text-gray-400 text-xl md:text-4xl font-bold">352</p>  
             <p className="font-semibold text-lg md:text-2xl">Attending</p>  
