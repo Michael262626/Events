@@ -51,7 +51,7 @@ const Footer = () => {
           <div className="flex-1">  
             <h4 className="text-lg font-bold flex items-center gap-2">  
               <span className="w-6 h-1 bg-pink-500"></span>  
-              Advance Wayfinder  
+              Advance Conference Map  
             </h4>  
             <div className="mt-4 bg-gray-800 rounded-2xl p-4">  
               <div className="flex flex-col items-center justify-center">  
@@ -68,7 +68,6 @@ const Footer = () => {
         </div>  
       </div>  
       <div className="flex flex-col p-12 md:flex-row mt-8 md:mt-12 gap-8 justify-between items-center w-full bg-black text-white">  
-        <h2 className="text-gray-400">@2025</h2>  
         <Image src={logo} width={150} height={20} alt="Logo" className="md:w-[250px] md:h-auto" />  
         <div className="flex gap-4 text-gray-400">  
           <a href="/privacy-policy" className="hover:text-white text-sm md:text-base">  
@@ -77,6 +76,7 @@ const Footer = () => {
           <a href="/terms-and-conditions" className="hover:text-white text-sm md:text-base">  
             Terms & Conditions  
           </a>  
+          <h2 className="text-gray-400">@2025</h2>  
         </div>  
       </div>  
     </div>  
