@@ -55,7 +55,7 @@ const Body = () => {
       {/* Main Content */}  
       <div className="relative flex flex-col p-5 md:p-20">  
         {/* Hashtag */}  
-        <p className="text-xl mt-8 font-bold text-left text-purple-400">#Advance Your Sound</p>  
+        <p className="text-xl mt-8 font-bold text-left text-yellow-400">#Advance Your Sound</p>  
 
         {/* Title */}  
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mt-4 mb-12 text-left">  
