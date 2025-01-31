@@ -47,7 +47,7 @@ const SubFooter = () => {
             alt="Whatsapp"
             className="md:w-[100px] md:h-[100px]" // Bigger image on desktop
         />
-      <h3 className="text-white text-lg md:text-2xl md:-ml-6">Whatsapp</h3>
+      <h3 className="text-white -ml-2 text-lg md:text-2xl md:-ml-6">Whatsapp</h3>
       </a>
 
             <a href="https://www.instagram.com/advancetalenthq?igsh=MWh0YjVpYzl3bmF0aQ==" target="_blank" rel="noopener noreferrer">
