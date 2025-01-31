@@ -35,12 +35,23 @@ const SubFooter = () => {
 
           {/* Logos Section */}  
           <div className="flex justify-center items-center gap-4 md:gap-8 my-2 md:my-4">  
-          <a href=" https://wa.me/message/6PDU7PN4O24KK1" target="_blank" rel="noopener noreferrer">
-          </a>
-            <Image src={whatsapp} width={50} alt="Whatsapp"/> 
-            <h3 className="text-white mr-4">Whatsapp</h3> 
+          <a
+              href="https://wa.me/message/6PDU7PN4O24KK1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 md:gap-5"
+          >
+        <Image
+            src={whatsapp}
+            width={50} // Increased image size
+            alt="Whatsapp"
+            className="md:w-[100px] md:h-[100px]" // Bigger image on desktop
+        />
+      <h3 className="text-white text-lg md:text-2xl md:-ml-6">Whatsapp</h3>
+      </a>
+
             <a href="https://www.instagram.com/advancetalenthq?igsh=MWh0YjVpYzl3bmF0aQ==" target="_blank" rel="noopener noreferrer">
-              <Image src={instagram} width={150} alt="Instagram" />
+              <Image src={instagram} width={150} alt="Instagram" className="md:w-[85%]"/>
             </a>
             {/* <a href="https://www.instagram.com/advancetalenthq?igsh=MWh0YjVpYzl3bmF0aQ==" target="_blank" rel="noopener noreferrer">
               <Image src={instagram} width={150} alt="Instagram" />
