@@ -11,10 +11,10 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     console.log("Request body:", body);
 
-    const { fullName, email, phoneNumber } = body;
+    const { fullName, email, phoneNumber, role } = body;
 
     // Validate required fields
-    if (!fullName || !email || !phoneNumber) {
+    if (!fullName || !email || !phoneNumber || !role) {
       console.error("Validation error: Missing fields");
       return NextResponse.json(
         { error: "Missing required fields" },
@@ -34,12 +34,13 @@ export async function POST(request: NextRequest) {
     }
 
     // Create and save a new user
-    console.log("Creating user with data:", { fullName, email, phoneNumber })
+    console.log("Creating user with data:", { fullName, email, phoneNumber, role })
     const newUser = await prisma.user.create({
       data: {
         fullName,
         email,
         phoneNumber,
+        role,
       },
     });
     console.log("New user created:", newUser);
@@ -48,7 +49,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         message: "User registered successfully",
-        user: { fullName, email, phoneNumber },
+        user: { fullName, email, phoneNumber, role },
       },
       { status: 201 }
     );

@@ -3,7 +3,9 @@
 import { useState } from "react";
 
 export default function LoginForm() {
-  const [users, setUsers] = useState<{ id: number; fullName: string; email: string; phoneNumber: string }[]>([]);
+  const [users, setUsers] = useState<
+    { id: number; fullName: string; email: string; phoneNumber: string; role: string }[]
+  >([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -39,7 +41,7 @@ export default function LoginForm() {
         throw new Error("Failed to delete user");
       }
 
-      setUsers(users.filter(user => user.id !== userId));
+      setUsers(users.filter((user) => user.id !== userId));
     } catch (err: any) {
       setError(err.message || "Failed to delete user");
     }
@@ -64,7 +66,10 @@ export default function LoginForm() {
           <h3 className="text-xl font-semibold mb-4">User List</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {users.map((user) => (
-              <div key={user.id} className="flex justify-between items-center border border-gray-700 p-4 rounded-lg bg-gray-800 shadow-md">
+              <div
+                key={user.id}
+                className="flex justify-between items-center border border-gray-700 p-4 rounded-lg bg-gray-800 shadow-md"
+              >
                 <div>
                   <p className="text-lg font-medium">
                     <strong>Name:</strong> {user.fullName}
@@ -74,6 +79,9 @@ export default function LoginForm() {
                   </p>
                   <p className="text-gray-300">
                     <strong>Phone:</strong> {user.phoneNumber}
+                  </p>
+                  <p className="text-gray-300">
+                    <strong>Role:</strong> {user.role}
                   </p>
                 </div>
                 <button

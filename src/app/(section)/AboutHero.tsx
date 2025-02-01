@@ -1,9 +1,23 @@
+"use client"
+
 import Light from "../../../public/assets/Lights.jpeg";  
 import piano from "../../../public/assets/Neon Piano.jpeg";  
 import guitar from "../../../public/assets/Free Photo _ Closeup of a man playing the bass guitar.jpeg";  
 import Image from "next/image";  
+import { usePathname, useRouter } from "next/navigation";  
+
 
 const AboutHero = () => {  
+    const router = useRouter();  
+  
+  const handleClick = () => {  
+    const isLoggedIn = Boolean(localStorage.getItem("userToken")); // Example token check  
+    if (isLoggedIn) {  
+      router.push("/transaction"); // Redirect to transaction page  
+    } else {  
+      router.push("/sign-up"); // Redirect to sign-up page  
+    }  
+  }; 
   return (  
     <div className="relative flex flex-col">  
       <div className="relative flex flex-col justify-center items-center">  
@@ -24,7 +38,7 @@ const AboutHero = () => {
             <span className="block">for unforgettable experiences</span>
           </p>
 
-          <button className="mt-6 px-4 py-2 md:px-6 md:py-3 bg-pink-500 hover:bg-pink-600 rounded-lg text-white font-bold">  
+          <button className="mt-6 px-4 py-2 md:px-6 md:py-3 bg-pink-500 hover:bg-pink-600 rounded-lg text-white font-bold" onClick={handleClick}>  
             Get Ticket  
           </button>  
         </div>  

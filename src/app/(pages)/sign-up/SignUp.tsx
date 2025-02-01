@@ -11,9 +11,10 @@ const SignUpPage: React.FC = () => {
     fullName: "",
     email: "",
     phoneNumber: "",
+    role: "", // New field for dropdown selection
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -26,38 +27,30 @@ const SignUpPage: React.FC = () => {
         body: JSON.stringify(formData),
         headers: { "Content-Type": "application/json" },
       });
-      console.log("Response", response);
-  
+
       if (response.ok) {
         const data = await response.json();
-        console.log("Data----->", data);
-
         sessionStorage.setItem("userDetails", JSON.stringify(data.user));
-        const userDetails = JSON.parse(sessionStorage.getItem("userDetails") || "{}");
-        console.log("Retrieved userDetails:", userDetails);     
-  
+
         toast({
           title: "Sign Up successful!",
           description: "You are now signed up. Redirecting to the transaction page.",
         });
-        router.push("/transaction"); // Redirect to the transaction page
+        router.push("/transaction");
       } else {
         const errorData = await response.json();
-        console.error("Sign-up failed:", errorData.message, errorData.stack);
         toast({
           title: "Sign up failed",
           description: errorData.message || "Something went wrong.",
         });
       }
     } catch (error: any) {
-      console.error("Error signing up:", error.message, error.stack);
       toast({
         title: "Error",
         description: "An unexpected error occurred.",
       });
     }
   };
-  
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-black">
@@ -69,7 +62,7 @@ const SignUpPage: React.FC = () => {
         }}
       >
         <h1 className="text-2xl font-bold mb-4 text-center text-white">Sign Up</h1>
-        
+
         {/* Full Name */}
         <div className="mb-4">
           <label htmlFor="fullName" className="block text-sm font-medium text-gray-400">
@@ -116,6 +109,26 @@ const SignUpPage: React.FC = () => {
             required
             className="mt-1 block w-full text-black px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
           />
+        </div>
+
+        {/* 🎵 Select Role Dropdown */}
+        <div className="mb-4">
+          <label htmlFor="role" className="block text-sm font-medium text-gray-400">
+            Select Your Role
+          </label>
+          <select
+            id="role"
+            name="role"
+            value={formData.role}
+            onChange={handleInputChange}
+            required
+            className="mt-1 block w-full text-black px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+          >
+            <option value="" disabled>Select an option</option>
+            <option value="Instrumentalist">Instrumentalist</option>
+            <option value="Vocalist">Vocalist</option>
+            <option value="Music Enthusiast">Music Enthusiast</option>
+          </select>
         </div>
 
         <button

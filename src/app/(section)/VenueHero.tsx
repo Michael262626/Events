@@ -1,9 +1,23 @@
+"use client"
+
 import Light from "../../../public/assets/Blur mexico1.png";  
 import piano from "../../../public/assets/Neon Piano.jpeg";  
 import guitar from "../../../public/assets/Free Photo _ Closeup of a man playing the bass guitar.jpeg";  
 import Image from "next/image";  
+import { usePathname, useRouter } from "next/navigation";  
+
 
 const VenuHero = () => {  
+     const router = useRouter();  
+    
+    const handleClick = () => {  
+      const isLoggedIn = Boolean(localStorage.getItem("userToken")); // Example token check  
+      if (isLoggedIn) {  
+        router.push("/transaction"); // Redirect to transaction page  
+      } else {  
+        router.push("/sign-up"); // Redirect to sign-up page  
+      }  
+    }; 
   return (  
     <div className="relative flex flex-col">  
       <div className="relative flex flex-col justify-center items-center">  
@@ -23,7 +37,7 @@ const VenuHero = () => {
           City Of Palms  
         </p> 
           <h1 className="text-pink-500 text-4xl mb-4 md:text-5xl font-bold">Anthony Village</h1>  
-          <button className="mt-6 px-4 py-2 bg-pink-500 hover:bg-pink-600 rounded-lg text-white font-bold md:px-6 md:py-3">  
+          <button className="mt-6 px-4 py-2 bg-pink-500 hover:bg-pink-600 rounded-lg text-white font-bold md:px-6 md:py-3" onClick={handleClick}>  
             Get Ticket  
           </button>  
         </div>  
