@@ -46,7 +46,7 @@ const AboutSubContent = () => {
               <FaCalendarAlt />  
             </div>  
             <h4 className="text-lg md:text-xl font-bold text-white mb-2">  
-              Interactive Schedule  
+            Link up with Industry helps  
             </h4>  
             <p className="text-gray-400 text-sm md:text-base">  
               Easily plan your day with an interactive event schedule.  
@@ -59,10 +59,10 @@ const AboutSubContent = () => {
               <IoIosStarHalf />  
             </div>  
             <h4 className="text-lg md:text-xl font-bold text-white mb-2">  
-              Diverse Musical Lineup  
+            knowledge money can't buy  
             </h4>  
             <p className="text-gray-400 text-sm md:text-base">  
-              Experience a diverse array of musical of talented artists.  
+            All Expense master class training with the legendary Uncle ben for one Minister  
             </p>  
           </div>  
 
@@ -75,7 +75,7 @@ const AboutSubContent = () => {
               Engaging Activities  
             </h4>  
             <p className="text-gray-400 text-sm md:text-base">  
-              Beyond music, explore engaging and interactive activities.  
+            Free recording of worship medley [ With Video] for one Ministers
             </p>  
           </div>  
         </div>  

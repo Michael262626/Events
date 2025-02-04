@@ -59,11 +59,18 @@ const SubFooter = () => {
           </div>  
 
           {/* Call to Action */}  
-          <div className="flex justify-center">  
+          <div className="flex justify-center">
+          <a
+              href="https://wa.me/message/6PDU7PN4O24KK1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 md:gap-5"
+          >  
             <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-5 py-2 rounded-lg text-lg font-bold hover:shadow-lg transition flex items-center justify-center gap-2">  
               Sign Up  
               <GoArrowUpRight />  
             </button>  
+            </a>
           </div>  
         </div>  
       </div>  

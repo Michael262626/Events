@@ -32,7 +32,7 @@ const AboutSubFooter = () => {
           <div className="relative flex flex-col md:flex-row items-center md:items-start justify-between px-4 md:px-12 py-6 space-y-6 md:space-y-0">  
             <div className="max-w-md p-4">  
               <h2 className="text-3xl md:text-5xl font-extrabold text-pink-500">  
-                Early Bird Tickets <br />  
+                Tickets <br />  
                 Available!  
               </h2>  
               <p className="mt-2 mb-4 text-gray-300 text-sm md:text-base">  
@@ -42,7 +42,7 @@ const AboutSubFooter = () => {
             </div>  
 
             {/* Adjusted button positioning to reduce bottom space */}  
-            <div className="absolute bottom-0 left-8 md:left-12"> {/* Moved button closer to the bottom */}  
+            <div className="absolute bottom-0 left-8 md:left-16"> {/* Moved button closer to the bottom */}  
               <button className="px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-md shadow-lg hover:scale-105 transform transition" onClick={handleTicketBuying}>  
                 Get Ticket  
               </button>  

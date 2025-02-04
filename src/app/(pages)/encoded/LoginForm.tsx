@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function LoginForm() {
   const [users, setUsers] = useState<
-    { id: number; fullName: string; email: string; phoneNumber: string; role: string }[]
+    { id: number; fullName: string; email: string; phoneNumber: string; role: string; payments: { fileUrl: string }[] }[]
   >([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -83,6 +83,18 @@ export default function LoginForm() {
                   <p className="text-gray-300">
                     <strong>Role:</strong> {user.role}
                   </p>
+
+                  {/* Display Payment Proof Image */}
+                  {user.payments.length > 0 && (
+                    <div className="mt-4">
+                      <strong>Payment Proof:</strong>
+                      <img
+                        src={user.payments[0].fileUrl} // Displaying the first payment proof image
+                        alt="Payment Proof"
+                        className="mt-2 w-full max-w-xs h-auto rounded-lg"
+                      />
+                    </div>
+                  )}
                 </div>
                 <button
                   onClick={() => deleteUser(user.id)}

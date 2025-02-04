@@ -7,14 +7,19 @@ export async function GET() {
   try {
     console.log("Fetching all users...");
 
-    // Retrieve all users including role
+    // Retrieve all users including their payment proofs
     const users = await prisma.user.findMany({
       select: {
         id: true,
         fullName: true,
         email: true,
         phoneNumber: true,
-        role: true, // Include role field
+        role: true,
+        payments: {
+          select: {
+            fileUrl: true, // Include the fileUrl of the payment proof
+          },
+        },
       },
     });
 
@@ -32,3 +37,4 @@ export async function GET() {
     );
   }
 }
+
