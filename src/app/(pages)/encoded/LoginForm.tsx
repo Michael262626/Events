@@ -22,6 +22,8 @@ export default function LoginForm() {
       }
 
       const data = await response.json();
+      console.log("API Response:", data);
+      
       setUsers(data.users);
     } catch (err: any) {
       setError(err.message || "Something went wrong");
@@ -65,45 +67,48 @@ export default function LoginForm() {
         <div className="mt-6">
           <h3 className="text-xl font-semibold mb-4">User List</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {users.map((user) => (
-              <div
-                key={user.id}
-                className="flex justify-between items-center border border-gray-700 p-4 rounded-lg bg-gray-800 shadow-md"
-              >
-                <div>
-                  <p className="text-lg font-medium">
-                    <strong>Name:</strong> {user.fullName}
-                  </p>
-                  <p className="text-gray-300">
-                    <strong>Email:</strong> {user.email}
-                  </p>
-                  <p className="text-gray-300">
-                    <strong>Phone:</strong> {user.phoneNumber}
-                  </p>
-                  <p className="text-gray-300">
-                    <strong>Role:</strong> {user.role}
-                  </p>
+          {users.map((user) => {
+          console.log(`User: ${user.fullName}, Payments:`, user.payments); 
+  return (
+    <div
+      key={user.id}
+      className="flex justify-between items-center border border-gray-700 p-4 rounded-lg bg-gray-800 shadow-md"
+    >
+      <div>
+        <p className="text-lg font-medium">
+          <strong>Name:</strong> {user.fullName}
+        </p>
+        <p className="text-gray-300">
+          <strong>Email:</strong> {user.email}
+        </p>
+        <p className="text-gray-300">
+          <strong>Phone:</strong> {user.phoneNumber}
+        </p>
+        <p className="text-gray-300">
+          <strong>Role:</strong> {user.role}
+        </p>
 
-                  {/* Display Payment Proof Image */}
-                  {user.payments.length > 0 && (
-                    <div className="mt-4">
-                      <strong>Payment Proof:</strong>
-                      <img
-                        src={user.payments[0].fileUrl} // Displaying the first payment proof image
-                        alt="Payment Proof"
-                        className="mt-2 w-full max-w-xs h-auto rounded-lg"
-                      />
-                    </div>
-                  )}
-                </div>
-                <button
-                  onClick={() => deleteUser(user.id)}
-                  className="bg-red-600 text-white px-3 py-1 rounded-lg hover:bg-red-500 transition"
-                >
-                  Delete
-                </button>
-              </div>
-            ))}
+        {user.payments.length > 0 && user.payments[0]?.fileUrl && (
+          <div className="mt-4">
+            <strong>Payment Proof:</strong>
+            <img
+              src={user.payments[0].fileUrl}
+              alt="Payment Proof"
+              className="mt-2 w-full max-w-xs h-auto rounded-lg"
+            />
+          </div>
+        )}
+      </div>
+      <button
+        onClick={() => deleteUser(user.id)}
+        className="bg-red-600 text-white px-3 py-1 rounded-lg hover:bg-red-500 transition"
+      >
+        Delete
+      </button>
+    </div>
+  );
+})}
+
           </div>
         </div>
       )}

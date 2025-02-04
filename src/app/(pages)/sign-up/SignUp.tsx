@@ -32,6 +32,8 @@ const SignUpPage: React.FC = () => {
         const data = await response.json();
         sessionStorage.setItem("userDetails", JSON.stringify(data.user));
 
+        console.log("Stored user details:", sessionStorage.getItem("userDetails"));
+    
         toast({
           title: "Sign Up successful!",
           description: "You are now signed up. Redirecting to the transaction page.",

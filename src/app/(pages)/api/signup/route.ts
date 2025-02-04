@@ -43,13 +43,13 @@ export async function POST(request: NextRequest) {
         role,
       },
     });
-    console.log("New user created:", newUser);
+  
 
     // Respond with success
     return NextResponse.json(
       {
         message: "User registered successfully",
-        user: { fullName, email, phoneNumber, role },
+        user: newUser,
       },
       { status: 201 }
     );

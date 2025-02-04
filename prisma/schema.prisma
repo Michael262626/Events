@@ -27,6 +27,5 @@ model PaymentProof {
   fileUrl    String   // URL or path to the uploaded file (stored in a storage service)
   createdAt  DateTime @default(now())
   status     String   // e.g. "pending", "verified", "rejected"
-  
   user       User     @relation(fields: [userId], references: [id])
 }

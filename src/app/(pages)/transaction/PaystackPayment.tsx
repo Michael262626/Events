@@ -1,46 +1,69 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import axios from "axios";
 import { cn } from "@/lib/utils";
 import { FaCloudUploadAlt } from "react-icons/fa"; // Upload Icon
 
 const SelarPayment: React.FC = () => {
   const router = useRouter();
   const [paymentMethod, setPaymentMethod] = useState<"online" | "bank">("online");
-  const [file, setFile] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
+  const [uploadedUrl, setUploadedUrl] = useState<string | null>(null);
   const [message, setMessage] = useState("");
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files && event.target.files[0]) {
-      setFile(event.target.files[0]);
+  useEffect(() => {
+    const loadCloudinary = () => {
+      if (typeof window !== "undefined" && !(window as any).cloudinary) {
+        const script = document.createElement("script");
+        script.src = "https://widget.cloudinary.com/v2.0/global/all.js";
+        script.async = true;
+        script.onload = () => console.log("Cloudinary widget loaded");
+        document.body.appendChild(script);
+      }
+    };
+    loadCloudinary();
+  }, []);
+
+  const handleUpload = async () => {
+    if (typeof window !== "undefined" && (window as any).cloudinary) {
+      const cloudinary = (window as any).cloudinary;
+      cloudinary.openUploadWidget(
+        { cloudName: "ddpzhay3j", uploadPreset: "c9uddlmc" },
+        async (error: any, result: any) => {
+          if (!error && result.event === "success") {
+            setUploadedUrl(result.info.secure_url);
+            setMessage("Upload successful!");
+  
+            // Get user ID (Replace with actual logic)
+            const userDetails = JSON.parse(sessionStorage.getItem("userDetails") || "{}");
+            console.log("Retrieved User Details:", userDetails);
+
+          await fetch("/api/payment-proof", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                userId: userDetails?.id || "", 
+                fileUrl: result.info.secure_url,
+                status: "pending", // Default status
+              }),
+          });
+            setTimeout(() => {
+              router.push("/");
+            }, 2000);
+          } else {
+            setMessage("Upload failed. Please try again.");
+          }
+        }
+      );
+    } else {
+      setMessage("Upload service unavailable.");
     }
   };
-
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
-    if (!file) {
-      setMessage("Please select a file first.");
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append("paymentProof", file);
-
-    setUploading(true);
-    setMessage("");
-
-    try {
-      const response = await axios.post("/api/payment-proof", formData);
-      setMessage("Payment proof uploaded successfully!");
-    } catch (error) {
-      setMessage("Error uploading payment proof. Please try again.");
-    } finally {
-      setUploading(false);
-    }
-  };
+  
+  
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-6 bg-gradient-to-br from-black to-black text-white">
@@ -59,7 +82,7 @@ const SelarPayment: React.FC = () => {
         </button>
         <button
           className={cn(
-            "py-2 px-4 text-lg font-medium transition-all  w-1/2 text-center",
+            "py-2 px-4 text-lg font-medium transition-all w-1/2 text-center",
             paymentMethod === "bank" ? "border-b-2 border-purple-500 text-purple-400" : "text-gray-400"
           )}
           onClick={() => setPaymentMethod("bank")}
@@ -95,32 +118,28 @@ const SelarPayment: React.FC = () => {
             </p>
           </div>
 
-          {/* File Upload Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <label className="block text-sm font-medium">Upload proof of payment:</label>
-
-            <label className="flex flex-col items-center justify-center border-2 border-dashed border-gray-500 rounded-lg p-4 cursor-pointer hover:border-purple-400 transition">
-              <FaCloudUploadAlt className="text-4xl text-purple-400" />
-              <span className="mt-2 text-sm text-gray-300">{file ? file.name : "Click to upload image"}</span>
-              <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleFileChange}
-                  className="hidden"
-              />
-
-            </label>
-
+          {/* Cloud Upload Button */}
+          <div className="space-y-4">
             <button
-              type="submit"
+              onClick={handleUpload}
+              className="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition flex items-center justify-center"
               disabled={uploading}
-              className="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition"
             >
-              {uploading ? "Uploading..." : "Submit Proof"}
+              <FaCloudUploadAlt className="mr-2" />
+              {uploading ? "Uploading..." : "Upload Proof of Payment"}
             </button>
-          </form>
 
-          {message && <p className="mt-4 text-center text-sm text-gray-300">{message}</p>}
+            {uploadedUrl && (
+              <p className="text-green-400 text-center text-sm">
+                Upload successful! Proof URL:{" "}
+                <a href={uploadedUrl} target="_blank" rel="noopener noreferrer" className="underline">
+                  View
+                </a>
+              </p>
+            )}
+
+            {/* {message && <p className="mt-4 text-center text-sm text-gray-300">{message}</p>} */}
+          </div>
         </div>
       )}
     </div>

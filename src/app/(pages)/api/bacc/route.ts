@@ -23,7 +23,7 @@ export async function GET() {
       },
     });
 
-    console.log("Users fetched:", users);
+    console.log("Users fetched:", JSON.stringify(users, null, 2));
 
     return NextResponse.json(
       { message: "Users retrieved successfully", users },
