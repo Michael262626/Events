@@ -1,7 +1,6 @@
-// pages/api/upload.ts
 import { v2 as cloudinary } from 'cloudinary';
 import { IncomingForm, File } from 'formidable'; // Use File for a single uploaded file
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextRequest, NextResponse } from 'next/server'; // Use NextRequest for Next.js 13+
 import { revalidatePath } from 'next/cache';
 
 // Cloudinary configuration
@@ -19,17 +18,17 @@ export const config = {
 };
 
 // Handle POST requests
-export const POST = async (req: NextApiRequest, res: NextApiResponse) => {
+export const POST = async (req: NextRequest) => {
   try {
     const form = new IncomingForm();
     form.parse(req, async (err: any, fields: Record<string, any>, files: { file: File[] }) => {
       if (err) {
-        return res.status(400).json({ error: 'Error parsing file' });
+        return NextResponse.json({ error: 'Error parsing file' }, { status: 400 });
       }
 
       // Ensure the 'file' field is present in the form data
       if (!files.file || files.file.length === 0) {
-        return res.status(400).json({ error: 'No file uploaded' });
+        return NextResponse.json({ error: 'No file uploaded' }, { status: 400 });
       }
 
       const file = files.file[0]; // Assuming 'file' is the field name in the form
@@ -45,17 +44,17 @@ export const POST = async (req: NextApiRequest, res: NextApiResponse) => {
         },
         async (error, result) => {
           if (error) {
-            return res.status(500).json({ error: 'Error uploading to Cloudinary' });
+            return NextResponse.json({ error: 'Error uploading to Cloudinary' }, { status: 500 });
           }
 
           // Revalidate the path after upload (if needed)
           revalidatePath('/');
 
-          res.status(200).json({ secure_url: result?.secure_url });
+          return NextResponse.json({ secure_url: result?.secure_url }, { status: 200 });
         }
       ).end(buffer);
     });
   } catch (error) {
-    res.status(500).json({ error: 'Internal server error' });
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 };
